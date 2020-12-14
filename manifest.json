@@ -1,0 +1,34 @@
+{
+	"manifest_version": 2,
+	"name": "YouTube Local History",
+	"description": "Keeps a local history of watched YouTube videos",
+	"version": "0.0.1",
+	"icons": {
+		"64": "icons/icon.png"
+	},
+	"background": {
+		"scripts": [
+			"background_script.js"
+		]
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*.mozilla.org/*"
+			],
+			"js": [
+				"content_script.js"
+			]
+		}
+	],
+	"page_action": {
+		"default_icon": {
+			"64": "icons/icon.png"
+		},
+		"default_popup": "pageAction/index.html",
+		"default_title": "YouTube Local History"
+	},
+	"options_ui": {
+		"page": "options/index.html"
+	}
+}
