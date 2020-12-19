@@ -14,7 +14,7 @@
 	"content_scripts": [
 		{
 			"matches": [
-				"*://*.mozilla.org/*"
+				"*://*.youtube.com/*"
 			],
 			"js": [
 				"content_script.js"
@@ -30,5 +30,16 @@
 	},
 	"options_ui": {
 		"page": "options/index.html"
-	}
+	},
+    "permissions": [
+        "storage"
+    ],
+    "web_accessible_resources": [
+        "event_listener.js"
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "youtube@history.com"
+        }
+    }
 }
